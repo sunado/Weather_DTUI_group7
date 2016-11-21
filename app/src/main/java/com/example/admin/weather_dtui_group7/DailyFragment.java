@@ -83,6 +83,9 @@ public class DailyFragment extends Fragment {
         barChart.getXAxis().setDrawGridLines(false);
         barChart.setDescription("");
         barChart.invalidate();
+        barChart.getXAxis().setTextColor(Color.WHITE);
+        barChart.getAxisLeft().setTextColor(Color.WHITE);
+        //barChart.getAxis().setTextColor(Color.WHITE);
     }
     public void setlistview(View view){
         listView = (ListView) view.findViewById(R.id.listview);

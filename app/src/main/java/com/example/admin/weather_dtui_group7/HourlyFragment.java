@@ -75,8 +75,8 @@ public class HourlyFragment extends Fragment {
 
 
 
-        set1.setColor(Color.BLACK);
-        set1.setCircleColor(Color.BLACK);
+        set1.setColor(Color.parseColor("#f44336"));
+        set1.setCircleColor(Color.RED);
         set1.setLineWidth(1f);
         set1.setCircleRadius(3f);
         set1.setDrawCircleHole(false);

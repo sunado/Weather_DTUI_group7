@@ -3,7 +3,8 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/white"
+    android:background="#10000000"
+
     >
     <LinearLayout
         android:layout_width="wrap_content"
@@ -18,7 +19,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="29/11"
-            android:textColor="#000000"
+            android:textColor="@color/white"
             android:textSize="15dp"
             android:id="@+id/date_number"
             />
@@ -27,7 +28,7 @@
             android:layout_height="wrap_content"
             android:text="WED"
             android:paddingLeft="5dp"
-            android:textColor="#000000"
+            android:textColor="@color/white"
             android:textSize="15dp"
             android:id="@+id/date_string"
             />
@@ -49,14 +50,14 @@
         android:paddingRight="0dp"
         android:text="Trời nắng và hanh kho "
         android:textSize="12dp"
-        android:textColor="#000000"
+        android:textColor="@color/white"
         android:id="@+id/status"
         />
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="27/24"
-        android:textColor="#000000"
+        android:textColor="@color/white"
         android:textSize="15dp"
         android:paddingLeft="20dp"
         android:paddingRight="10dp"
