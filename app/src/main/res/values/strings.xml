@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">Weather_DTUI_group7</string>
+    <string name="humidity">Độ ẩm: 48%</string>
+    <string name="wind">Gió: 7.0 km/h</string>
+    <string name="temperature">30°</string>
 </resources>
