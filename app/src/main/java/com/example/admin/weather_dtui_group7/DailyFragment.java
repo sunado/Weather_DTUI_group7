@@ -32,7 +32,7 @@ public class DailyFragment extends Fragment {
         View view = inflater.inflate(R.layout.daily_layout, container, false);
         BarChart barChart = (BarChart) view.findViewById(R.id.chart);
 
-        //khoi tao
+
 
         setChart(barChart);
         setlistview(view);
@@ -76,7 +76,11 @@ public class DailyFragment extends Fragment {
 
         BarData data = new BarData(labels,dataset);
         barChart.setData(data);
-        barChart.animateY(5000);
+        barChart.animateY(1000);
+        barChart.getAxisRight().setEnabled(false);
+        barChart.getAxisRight().setDrawGridLines(false);
+        barChart.getAxisLeft().setDrawGridLines(false);
+        barChart.getXAxis().setDrawGridLines(false);
         barChart.setDescription("");
         barChart.invalidate();
     }
@@ -85,10 +89,10 @@ public class DailyFragment extends Fragment {
 
         listitem.add(new ItemDaily(R.drawable.status1,"29/11","WED","Trời nắng và hanh khô","27\u00b0/24\u00b0",R.drawable.rightarrow));
         listitem.add(new ItemDaily(R.drawable.status2,"30/11","THU","Trời mưa và ẩm ướt","25°/20°",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status5,"01/12","FRI","Có dông","29°/26°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status5,"01/12","FRI","Trời có dông","29°/26°",R.drawable.rightarrow));
         listitem.add(new ItemDaily(R.drawable.status3,"02/12","SAT","Trời nắng","30°/29°",R.drawable.rightarrow));
         listitem.add(new ItemDaily(R.drawable.status4,"03/12","SUN","Trời nắng và có mây","26°/24°",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status6,"04/12","MON","Có mây","32°/25°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status6,"04/12","MON","Trời có mây","32°/25°",R.drawable.rightarrow));
 
         ItemDailyAdapter adapter =new ItemDailyAdapter(view.getContext(),listitem);
 
