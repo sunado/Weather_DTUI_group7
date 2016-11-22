@@ -1,5 +1,6 @@
 package com.example.admin.weather_dtui_group7;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
@@ -8,6 +9,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -109,5 +111,16 @@ public class DailyFragment extends Fragment {
         ItemDailyAdapter adapter =new ItemDailyAdapter(view.getContext(),listitem);
 
         listView.setAdapter(adapter);
+        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                switch(i){
+                    case 0:
+                        Intent intent=new Intent(getActivity(),ItemDetails.class);
+                        getActivity().startActivity(intent);
+                        break;
+                }
+            }
+        });
     }
 }
