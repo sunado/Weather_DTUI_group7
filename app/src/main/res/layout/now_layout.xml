@@ -2,7 +2,14 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-
+    <pl.droidsonroids.gif.GifTextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/back2"
+        android:id="@+id/gifTextView"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
   <LinearLayout
       android:orientation="vertical"
       android:layout_width="wrap_content"
@@ -11,16 +18,30 @@
       android:layout_alignParentEnd="true"
       android:layout_alignParentLeft="true"
       android:layout_alignParentStart="true">
+      <ImageView
+          android:layout_width="200dp"
+          android:layout_height="200dp"
+          android:layout_gravity="center"
+          android:src="@drawable/status6"/>
+      <TextView
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          android:layout_marginTop="70dp"
+          android:text="Mưa rào "
+          android:textColor="@color/white"
+          android:fontFamily="serif"
+          android:textSize="30dp"
+          android:layout_marginLeft="40dp"/>
 
       <TextView
-      android:layout_marginTop="300dp"
+      android:layout_marginTop="00dp"
       android:text="30°C"
       android:layout_gravity="center_horizontal"
       android:layout_width="match_parent"
       android:layout_height="wrap_content"
       android:id="@+id/textView2"
       android:fontFamily="serif"
-      android:textSize="45dp"
+      android:textSize="50dp"
       android:textColor="@color/white"
       android:layout_marginLeft="40dp" />
 
@@ -43,5 +64,13 @@
       android:layout_marginLeft="40dp" />
 
   </LinearLayout>
-
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:text="Cập nhật lần cuối: 20 phút trước"
+        android:fontFamily="serif"
+        android:textSize="10dp"
+        android:textColor="@color/white"
+        android:textAlignment="center" />
 </RelativeLayout>
