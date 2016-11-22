@@ -9,6 +9,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
@@ -24,11 +25,14 @@ import java.util.ArrayList;
  */
 public class HourlyFragment extends Fragment {
     LineChart lineChart;
+    ListView listView;
+    ArrayList<ItemHourly> listitem = new ArrayList<>();
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.hourly_layout, container, false);
         setLineGraph(view);
+        setListView(view);
         return view;
     }
     public void setLineGraph(View view){
@@ -94,5 +98,17 @@ public class HourlyFragment extends Fragment {
         lineChart.setData(data);
         lineChart.animateX(1000);
         lineChart.animateY(1000);
+    }
+    public void setListView(View view){
+        listView = (ListView)view.findViewById(R.id.listview_hour);
+        listitem.add(new ItemHourly("22:00",R.drawable.status_cloud_sun,"mưa rào nhẹ","26\u00b0"));
+        listitem.add(new ItemHourly("22:00",R.drawable.status_cloud_sun,"mưa rào nhẹ","26\u00b0"));
+        listitem.add(new ItemHourly("22:00",R.drawable.status_cloud_sun,"mưa rào nhẹ","26\u00b0"));
+        listitem.add(new ItemHourly("22:00",R.drawable.status_cloud_sun,"mưa rào nhẹ","26\u00b0"));
+        listitem.add(new ItemHourly("22:00",R.drawable.status_cloud_sun,"mưa rào nhẹ","26\u00b0"));
+
+        ItemHourlyAdapter adapter =new ItemHourlyAdapter(view.getContext(),listitem);
+
+        listView.setAdapter(adapter);
     }
 }
