@@ -7,16 +7,20 @@ import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.ArrayList;
 
@@ -44,6 +48,7 @@ public class HourlyFragment extends Fragment {
 
 
         l.setForm(Legend.LegendForm.LINE);
+        l.setTextColor(Color.WHITE);
     }
     private ArrayList<String> setXAxisValues(){
         ArrayList<String> xVals = new ArrayList<String>();
@@ -79,13 +84,13 @@ public class HourlyFragment extends Fragment {
 
 
 
-        set1.setColor(Color.parseColor("#f44336"));
-        set1.setCircleColor(Color.RED);
+        set1.setColor(Color.WHITE);
+        set1.setCircleColor(Color.WHITE);
         set1.setLineWidth(1f);
         set1.setCircleRadius(3f);
         set1.setDrawCircleHole(false);
-        set1.setValueTextSize(9f);
-        set1.setDrawFilled(true);
+        set1.setValueTextSize(12f);
+//        set1.setDrawFilled(true);
 
         ArrayList<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
         dataSets.add(set1);
@@ -95,20 +100,30 @@ public class HourlyFragment extends Fragment {
         lineChart.getAxisRight().setEnabled(false);
         lineChart.getAxisRight().setDrawGridLines(false);
         lineChart.getXAxis().setDrawGridLines(false);
+        lineChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        lineChart.getXAxis().setTextColor(Color.WHITE);
+        lineChart.getAxisLeft().setEnabled(false);
         lineChart.setData(data);
-        lineChart.animateX(1000);
-        lineChart.animateY(1000);
+        lineChart.getLineData().setValueTextColor(Color.WHITE);
+        lineChart.animateX(4000);
+        lineChart.getLineData().setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
+                return String.valueOf((int) Math.floor(value))+"°";
+            }
+        });
     }
     public void setListView(View view){
         listView = (ListView)view.findViewById(R.id.listview_hour);
         listitem.add(new ItemHourly("22:00",R.drawable.status5,"Mưa giông lớn","26\u00b0"));
-        listitem.add(new ItemHourly("22:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0"));
-        listitem.add(new ItemHourly("22:00",R.drawable.status1,"Nắng nhẹ","30\u00b0"));
-        listitem.add(new ItemHourly("22:00",R.drawable.status3,"Nắng gay gắt","33\u00b0"));
-        listitem.add(new ItemHourly("22:00",R.drawable.status_cloud_sun,"Nhiều mây","28\u00b0"));
+        listitem.add(new ItemHourly("23:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0"));
+        listitem.add(new ItemHourly("0:00",R.drawable.status1,"Nắng nhẹ","30\u00b0"));
+        listitem.add(new ItemHourly("1:00",R.drawable.status3,"Nắng gay gắt","33\u00b0"));
+        listitem.add(new ItemHourly("2:00",R.drawable.status_cloud_sun,"Nhiều mây","28\u00b0"));
 
         ItemHourlyAdapter adapter =new ItemHourlyAdapter(view.getContext(),listitem);
 
         listView.setAdapter(adapter);
+
     }
 }

@@ -13,11 +13,15 @@ import android.widget.AdapterView;
 import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.BarChart;
+import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.data.BarData;
 import com.github.mikephil.charting.data.BarDataSet;
 import com.github.mikephil.charting.data.BarEntry;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.formatter.ValueFormatter;
 import com.github.mikephil.charting.interfaces.datasets.IBarDataSet;
 import com.github.mikephil.charting.utils.ColorTemplate;
+import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -68,7 +72,6 @@ public class DailyFragment extends Fragment {
         BarDataSet barDataSet1 = new BarDataSet(group1, "Nhiệt độ cao nhất");
 
         barDataSet1.setColor(Color.rgb(104, 241, 175));
-
         BarDataSet barDataSet2 = new BarDataSet(group2, "Nhiệt độ thấp nhất");
         barDataSet2.setColor(Color.rgb(164, 228, 251));
 
@@ -86,26 +89,35 @@ public class DailyFragment extends Fragment {
         barChart.setDescription("");
         barChart.invalidate();
         barChart.getXAxis().setTextColor(Color.WHITE);
-        barChart.getAxisLeft().setTextColor(Color.WHITE);
-        //barChart.getAxis().setTextColor(Color.WHITE);
+        barChart.getAxisLeft().setEnabled(false);
+        barChart.getBarData().setValueTextColor(Color.WHITE);
+        barChart.getLegend().setTextColor(Color.WHITE);
+        barChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
+        barChart.getBarData().setValueFormatter(new ValueFormatter() {
+            @Override
+            public String getFormattedValue(float value, Entry entry, int dataSetIndex, ViewPortHandler viewPortHandler) {
+                return String.valueOf((int) Math.floor(value))+"°";
+            }
+        });
+
     }
     public void setlistview(View view){
         listView = (ListView) view.findViewById(R.id.listview);
 
 
-//        listitem.add(new ItemDaily(R.drawable.status1,"29/11","WED","Trời nắng và hanh khô","27\u00b0/24\u00b0",R.drawable.rightarrow));
-//        listitem.add(new ItemDaily(R.drawable.status2,"30/11","THU","Trời mưa và ẩm ướt","25°/20°",R.drawable.rightarrow));
-//        listitem.add(new ItemDaily(R.drawable.status5,"01/12","FRI","Trời có dông","29°/26°",R.drawable.rightarrow));
-//        listitem.add(new ItemDaily(R.drawable.status3,"02/12","SAT","Trời nắng","30°/29°",R.drawable.rightarrow));
-//        listitem.add(new ItemDaily(R.drawable.status4,"03/12","SUN","Trời nắng và có mây","26°/24°",R.drawable.rightarrow));
-//        listitem.add(new ItemDaily(R.drawable.status6,"04/12","MON","Trời có mây","32°/25°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status1,"29/11","WED","Trời nắng và hanh khô","27\u00b0/24\u00b0",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status2,"30/11","THU","Trời mưa và ẩm ướt","25°/20°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status5,"01/12","FRI","Trời có dông","29°/26°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status3,"02/12","SAT","Trời nắng","30°/29°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status4,"03/12","SUN","Trời nắng và có mây","26°/24°",R.drawable.rightarrow));
+        listitem.add(new ItemDaily(R.drawable.status6,"04/12","MON","Trời có mây","32°/25°",R.drawable.rightarrow));
 
-        listitem.add(new ItemDaily(R.drawable.status_raindrops,"29/11","WED","mưa rào nhẹ","27\u00b0/24\u00b0",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status_cloud_raindrop,"30/11","THU","Trời mưa và ẩm ướt","25°/20°",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status_cloud_lightning,"01/12","FRI","Có dông","29°/26°",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status_sun,"02/12","SAT","Trời nắng","30°/29°",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status_cloud_sun,"03/12","SUN","Trời nắng và có mây","26°/24°",R.drawable.rightarrow));
-        listitem.add(new ItemDaily(R.drawable.status_cloud_lightning2,"04/12","MON","Có mây và sấm chớp","32°/25°",R.drawable.rightarrow));
+//        listitem.add(new ItemDaily(R.drawable.status_raindrops,"29/11","WED","mưa rào nhẹ","27\u00b0/24\u00b0",R.drawable.rightarrow));
+//        listitem.add(new ItemDaily(R.drawable.status_cloud_raindrop,"30/11","THU","Trời mưa và ẩm ướt","25°/20°",R.drawable.rightarrow));
+//        listitem.add(new ItemDaily(R.drawable.status_cloud_lightning,"01/12","FRI","Có dông","29°/26°",R.drawable.rightarrow));
+//        listitem.add(new ItemDaily(R.drawable.status_sun,"02/12","SAT","Trời nắng","30°/29°",R.drawable.rightarrow));
+//        listitem.add(new ItemDaily(R.drawable.status_cloud_sun,"03/12","SUN","Trời nắng và có mây","26°/24°",R.drawable.rightarrow));
+//        listitem.add(new ItemDaily(R.drawable.status_cloud_lightning2,"04/12","MON","Có mây và sấm chớp","32°/25°",R.drawable.rightarrow));
 
 
         ItemDailyAdapter adapter =new ItemDailyAdapter(view.getContext(),listitem);

@@ -3,4 +3,5 @@
     <string name="humidity">Độ ẩm: 48%</string>
     <string name="wind">Gió: 7.0 km/h</string>
     <string name="temperature">30°</string>
+    <string name="title_activity_details_item">DetailsItem</string>
 </resources>
