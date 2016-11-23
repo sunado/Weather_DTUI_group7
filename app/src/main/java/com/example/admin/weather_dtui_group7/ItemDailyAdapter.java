@@ -5,6 +5,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -26,11 +28,13 @@ public class ItemDailyAdapter extends BaseAdapter {
     }
     public ArrayList<ItemDaily> listDaily;
     LayoutInflater inflater = null;
+    boolean[] animationStates;
     private Context mContext;
     public ItemDailyAdapter(Context context, ArrayList<ItemDaily> item){
         inflater =LayoutInflater.from(context);
         mContext = context;
         this.listDaily = item;
+
     }
     @Override
     public int getCount() {
@@ -50,6 +54,7 @@ public class ItemDailyAdapter extends BaseAdapter {
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
         ViewHolder holder = null;
+        animationStates = new boolean[getCount()];
         if(view == null){
             view = inflater.inflate(R.layout.item_listview,null);
             holder = new ViewHolder();
@@ -59,6 +64,12 @@ public class ItemDailyAdapter extends BaseAdapter {
             holder.status = (TextView)view.findViewById(R.id.status);
             holder.degree = (TextView)view.findViewById(R.id.degree);
             holder.iconNext= (ImageView)view.findViewById(R.id.iconNext);
+            if (!animationStates[i]) {
+                animationStates[i] = true;
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.fade_in);
+                animation.setStartOffset(i*700);
+                view.startAnimation(animation);
+            }
             view.setTag(holder);
         }
         else {

@@ -4,6 +4,8 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -22,6 +24,7 @@ public class ItemHourlyAdapter extends BaseAdapter {
         TextView degree;
 
     }
+    boolean[] animationStates;
     public ArrayList<ItemHourly> listHourly;
     LayoutInflater inflater = null;
     private Context mContext;
@@ -48,6 +51,7 @@ public class ItemHourlyAdapter extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         ViewHolder holder = null;
+        animationStates = new boolean[getCount()];
         if(convertView == null){
             convertView = inflater.inflate(R.layout.item_hourly,null);
             holder = new ItemHourlyAdapter.ViewHolder();
@@ -56,6 +60,12 @@ public class ItemHourlyAdapter extends BaseAdapter {
             holder.image =(ImageView)convertView.findViewById(R.id.image);
             holder.status = (TextView)convertView.findViewById(R.id.status_hourly);
             convertView.setTag(holder);
+            if (!animationStates[position]) {
+                animationStates[position] = true;
+                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.fade_in);
+                animation.setStartOffset(position*700);
+                convertView.startAnimation(animation);
+            }
         }
         else {
             holder =(ItemHourlyAdapter.ViewHolder)convertView.getTag();
