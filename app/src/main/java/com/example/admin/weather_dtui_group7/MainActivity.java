@@ -1,5 +1,6 @@
 package com.example.admin.weather_dtui_group7;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.support.design.widget.NavigationView;
@@ -30,6 +31,8 @@ public class MainActivity extends AppCompatActivity {
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.add) {
+            Intent i = new Intent(MainActivity.this,AddLocation.class);
+            startActivity(i);
             return true;
         }
         return super.onOptionsItemSelected(item);
@@ -95,7 +98,6 @@ public class MainActivity extends AppCompatActivity {
                 R.string.app_name);
 
         mDrawerLayout.setDrawerListener(mDrawerToggle);
-        mDrawerLayout.setBackgroundColor(Color.parseColor("#10000000"));
         mDrawerToggle.syncState();
 
     }

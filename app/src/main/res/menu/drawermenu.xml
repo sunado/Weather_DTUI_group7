@@ -2,34 +2,41 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item android:title="Địa Điểm Hiện Tại"
-        android:icon="@drawable/location"
+        android:icon="@drawable/placeholder"
         />
 
     <item android:title="Hà Nội"
         android:id="@+id/nav_item_inbox"
 
         />
-    <item android:title="Khác">
-        <menu>
+    <item android:title="Hải Phòng"
+
+        />
+    <item android:title="Hải Dương"
+
+        />
+    <item android:title="Nam Định"
+
+        />
             <item
                 android:title="Cài đặt"
+                android:icon="@drawable/settings"
                 />
             <item
                 android:title="Gửi phản hồi"
-                android:icon="@drawable/sent"
+                android:icon="@drawable/sentmail"
                 />
-        </menu>
-    </item>
+
     <item android:title="Chia sẻ"
         android:icon="@drawable/share"
         />
     <group android:id="@+id/group_settings_id">
 
         <item android:title="Đánh giá ứng dụng"
-            android:icon="@drawable/setting"
+            android:icon="@drawable/star"
             />
         <item android:title="Trợ giúp"
-            android:icon="@drawable/help"
+            android:icon="@drawable/info"
             />
     </group>
 
