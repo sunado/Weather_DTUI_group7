@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
 
+import com.cjj.MaterialRefreshLayout;
+import com.cjj.MaterialRefreshListener;
+
 import pl.droidsonroids.gif.GifTextView;
 import pl.droidsonroids.gif.GifTextureView;
 
@@ -37,30 +40,33 @@ public class MainActivity extends FragmentActivity {
         /**
          *  set refresh
          */
-        final SwipeRefreshLayout mSwipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeToRefresh);
-        mSwipeRefreshLayout.setColorSchemeResources(R.color.colorAccent);
-        final GifTextView gifView= (GifTextView) findViewById(R.id.gifTextView);
 
-        mSwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        final GifTextView gifView= (GifTextView) findViewById(R.id.gifTextView);
+        final MaterialRefreshLayout materialRefreshLayout = (MaterialRefreshLayout) findViewById(R.id.refresh);
+        materialRefreshLayout.setMaterialRefreshListener(new MaterialRefreshListener() {
             @Override
-            public void onRefresh() {
+            public void onRefresh(final MaterialRefreshLayout materialRefreshLayout) {
+                //refreshing...
                 final Handler handler = new Handler();
                 handler.postDelayed(new Runnable() {
                     @Override
                     public void run() {
                         //Do something after 500ms
                         gifView.setBackgroundResource(BackgroundRes.getNext());
-                        mSwipeRefreshLayout.setRefreshing(false);
+                        materialRefreshLayout.finishRefresh();
                     }
                 }, 500);
-
+            }
+            @Override
+            public void onRefreshLoadMore(MaterialRefreshLayout materialRefreshLayout) {
+                //load more refreshing...
             }
         });
 
 
-        /**
-         * Setup click events on the Navigation View Items.
-         */
+                /**
+                 * Setup click events on the Navigation View Items.
+                 */
 
         mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
             @Override
