@@ -1,44 +1,34 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
-    <item android:title="Location"
+    <item android:title="Địa Điểm Hiện Tại"
         android:icon="@drawable/location"
         />
 
-    <item android:title="Inbox"
+    <item android:title="Hà Nội"
         android:id="@+id/nav_item_inbox"
-        android:icon="@drawable/inbox"
+
         />
-
-    <item android:title="Sent"
-        android:id="@+id/nav_item_sent"
-        android:icon="@drawable/sent"
-        />
-
-
-
-
-
-    <item android:title="Others">
+    <item android:title="Khác">
         <menu>
             <item
-                android:title="Spam"
+                android:title="Cài đặt"
                 />
             <item
-                android:title="Bin"
-                android:icon="@drawable/bin"
+                android:title="Gửi phản hồi"
+                android:icon="@drawable/sent"
                 />
         </menu>
     </item>
-    <item android:title="Share"
+    <item android:title="Chia sẻ"
         android:icon="@drawable/share"
         />
     <group android:id="@+id/group_settings_id">
 
-        <item android:title="Settings"
+        <item android:title="Đánh giá ứng dụng"
             android:icon="@drawable/setting"
             />
-        <item android:title="Help"
+        <item android:title="Trợ giúp"
             android:icon="@drawable/help"
             />
     </group>

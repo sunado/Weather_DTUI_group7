@@ -119,7 +119,7 @@ public class HourlyFragment extends Fragment {
         listitem.add(new ItemHourly("23:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0"));
         listitem.add(new ItemHourly("0:00",R.drawable.status1,"Nắng nhẹ","30\u00b0"));
         listitem.add(new ItemHourly("1:00",R.drawable.status3,"Nắng gay gắt","33\u00b0"));
-        listitem.add(new ItemHourly("2:00",R.drawable.status_cloud_sun,"Nhiều mây","28\u00b0"));
+        listitem.add(new ItemHourly("2:00",R.drawable.status6,"Nhiều mây","28\u00b0"));
 
         ItemHourlyAdapter adapter =new ItemHourlyAdapter(view.getContext(),listitem);
 

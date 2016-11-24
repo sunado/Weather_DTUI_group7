@@ -2,6 +2,7 @@ package com.example.admin.weather_dtui_group7;
 
 import android.content.ClipData;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -64,12 +65,6 @@ public class ItemDailyAdapter extends BaseAdapter {
             holder.status = (TextView)view.findViewById(R.id.status);
             holder.degree = (TextView)view.findViewById(R.id.degree);
             holder.iconNext= (ImageView)view.findViewById(R.id.iconNext);
-            if (!animationStates[i]) {
-                animationStates[i] = true;
-                Animation animation = AnimationUtils.loadAnimation(mContext, R.anim.fade_in);
-                animation.setStartOffset(i*700);
-                view.startAnimation(animation);
-            }
             view.setTag(holder);
         }
         else {
