@@ -11,4 +11,7 @@ public class BackgroundRes {
         count=(count+1)%imgList.length;
         return imgList[count];
     }
+    public static int getCurrent(){
+        return imgList[count];
+    }
 }

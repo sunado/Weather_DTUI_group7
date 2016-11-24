@@ -7,12 +7,16 @@ import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.view.MenuItem;
 
+import pl.droidsonroids.gif.GifTextView;
+
 public class ItemDetails extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_item_details);
+        final GifTextView gifView= (GifTextView) findViewById(R.id.itemDetails);
+        gifView.setBackgroundResource(BackgroundRes.getCurrent());
         Toolbar toolbar = (Toolbar)findViewById(R.id.toolbar_details);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
