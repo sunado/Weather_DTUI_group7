@@ -45,8 +45,7 @@
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:paddingTop="26dp"
-
-        android:paddingLeft="20dp"
+        android:paddingLeft="5dp"
         android:paddingRight="0dp"
         android:text="Trời nắng và hanh kho "
         android:textSize="12dp"
@@ -59,7 +58,8 @@
         android:text="27/24"
         android:textColor="@color/white"
         android:textSize="15dp"
-        android:paddingLeft="20dp"
+        android:paddingLeft="5dp"
+        android:textStyle="bold"
         android:paddingRight="10dp"
         android:id="@+id/degree"
         />

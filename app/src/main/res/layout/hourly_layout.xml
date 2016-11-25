@@ -22,6 +22,7 @@
             android:layout_weight="1"
             android:id="@+id/listview_hour"
             android:divider="@null"
+            android:scrollbars="none"
             android:dividerHeight="0dp"
             android:clipToPadding="false"
             android:nestedScrollingEnabled="false"

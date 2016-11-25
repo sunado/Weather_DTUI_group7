@@ -36,11 +36,11 @@ public class HourlyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.hourly_layout, container, false);
-        listitem.add(new ItemHourly("22:00",R.drawable.status5,"Mưa giông lớn","26\u00b0"));
-        listitem.add(new ItemHourly("23:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0"));
-        listitem.add(new ItemHourly("0:00",R.drawable.status1,"Nắng nhẹ","30\u00b0"));
-        listitem.add(new ItemHourly("1:00",R.drawable.status3,"Nắng gay gắt","33\u00b0"));
-        listitem.add(new ItemHourly("2:00",R.drawable.status6,"Nhiều mây","28\u00b0"));
+        listitem.add(new ItemHourly("22:00",R.drawable.status5,"Mưa giông lớn","26\u00b0C"));
+        listitem.add(new ItemHourly("23:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0C"));
+        listitem.add(new ItemHourly("0:00",R.drawable.status1,"Nắng nhẹ","30\u00b0C"));
+        listitem.add(new ItemHourly("1:00",R.drawable.status3,"Nắng gay gắt","33\u00b0C"));
+        listitem.add(new ItemHourly("2:00",R.drawable.status6,"Nhiều mây","28\u00b0C"));
         setLineGraph(view);
         setListView(view);
         return view;
