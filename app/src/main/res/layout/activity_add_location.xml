@@ -7,14 +7,11 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="com.example.admin.weather_dtui_group7.AddLocation">
-    <pl.droidsonroids.gif.GifTextView
+    <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/back2"
-        android:id="@+id/gifTextView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:background="#696161"
+        />
     <android.support.v7.widget.Toolbar
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
@@ -34,15 +31,19 @@
             android:layout_width="match_parent"
             android:layout_height="40dp"
             android:background="@drawable/auto_text"
-            android:hint="Nhập thành phố"
+            android:hint="@string/edittext_hint"
             android:textColorHint="@color/white"
+            android:id="@+id/auto"
+            android:textColor="@color/white"
+            android:padding="10dp"
+            android:textCursorDrawable="@drawable/color_cursor"
             />
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Vị trí hiện tại"
             android:textColor="@color/white"
-            android:textStyle="bold"
+            android:textStyle="bold|italic"
             android:layout_marginTop="40dp"
             android:textSize="16dp"
             />
@@ -67,7 +68,7 @@
                 android:layout_height="wrap_content"
                 android:text="Hà nội"
                 android:textColor="@color/white"
-                android:textSize="17dp"
+                android:textSize="13dp"
                 android:layout_gravity="center"
                 android:layout_marginLeft="10dp"
                 />
@@ -77,7 +78,7 @@
             android:layout_height="wrap_content"
             android:text="Các vị trí phổ biến"
             android:textColor="@color/white"
-            android:textStyle="bold"
+            android:textStyle="bold|italic"
             android:layout_marginTop="40dp"
             android:textSize="16dp"
             />
@@ -91,7 +92,8 @@
             android:layout_height="wrap_content"
             android:dividerHeight="0dp"
             android:id="@+id/list_location"
-            android:background="#10000000"
+            android:background="#80000000"
+            android:divider="@null"
             >
         </ListView>
     </LinearLayout>

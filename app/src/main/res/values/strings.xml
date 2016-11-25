@@ -4,4 +4,7 @@
     <string name="wind">Gió: 7.0 km/h</string>
     <string name="temperature">30°</string>
     <string name="title_activity_details_item">DetailsItem</string>
+    <string name="edittext_hint">
+        <font size="12">Nhập thành phố</font>
+    </string>
 </resources>

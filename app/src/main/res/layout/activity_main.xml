@@ -70,9 +70,8 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:id="@+id/shitstuff"
-        android:background="#1c1919"
+        android:background="#98000000"
         app:itemTextColor="#ffffff"
         app:itemIconTint="#ffffff"
-        app:menu="@menu/drawermenu"
-        android:layout_marginTop="-24dp" />
+        app:menu="@menu/drawermenu" />
 </android.support.v4.widget.DrawerLayout>

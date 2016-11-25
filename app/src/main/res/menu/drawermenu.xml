@@ -9,15 +9,6 @@
         android:id="@+id/nav_item_inbox"
 
         />
-    <item android:title="Hải Phòng"
-
-        />
-    <item android:title="Hải Dương"
-
-        />
-    <item android:title="Nam Định"
-
-        />
             <item
                 android:title="Cài đặt"
                 android:icon="@drawable/settings"
