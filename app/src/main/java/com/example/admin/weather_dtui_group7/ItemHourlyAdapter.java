@@ -1,6 +1,7 @@
 package com.example.admin.weather_dtui_group7;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -71,6 +72,7 @@ public class ItemHourlyAdapter extends BaseAdapter {
             holder.degree .setText(itemHourly.getDegree());
             holder.hour.setText(itemHourly.getHour());
         }
+
         return convertView;
     }
 }

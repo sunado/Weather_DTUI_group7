@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -35,6 +36,11 @@ public class HourlyFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.hourly_layout, container, false);
+        listitem.add(new ItemHourly("22:00",R.drawable.status5,"Mưa giông lớn","26\u00b0"));
+        listitem.add(new ItemHourly("23:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0"));
+        listitem.add(new ItemHourly("0:00",R.drawable.status1,"Nắng nhẹ","30\u00b0"));
+        listitem.add(new ItemHourly("1:00",R.drawable.status3,"Nắng gay gắt","33\u00b0"));
+        listitem.add(new ItemHourly("2:00",R.drawable.status6,"Nhiều mây","28\u00b0"));
         setLineGraph(view);
         setListView(view);
         return view;
@@ -115,12 +121,6 @@ public class HourlyFragment extends Fragment {
     }
     public void setListView(View view){
         listView = (ListView)view.findViewById(R.id.listview_hour);
-        listitem.add(new ItemHourly("22:00",R.drawable.status5,"Mưa giông lớn","26\u00b0"));
-        listitem.add(new ItemHourly("23:00",R.drawable.status2,"Mưa rào nhẹ","24\u00b0"));
-        listitem.add(new ItemHourly("0:00",R.drawable.status1,"Nắng nhẹ","30\u00b0"));
-        listitem.add(new ItemHourly("1:00",R.drawable.status3,"Nắng gay gắt","33\u00b0"));
-        listitem.add(new ItemHourly("2:00",R.drawable.status6,"Nhiều mây","28\u00b0"));
-
         ItemHourlyAdapter adapter =new ItemHourlyAdapter(view.getContext(),listitem);
 
         listView.setAdapter(adapter);
