@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.graphics.Color;
 import android.os.Handler;
 import android.provider.Settings;
+import android.support.annotation.Nullable;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -20,6 +21,8 @@ import android.view.MenuItem;
 import android.view.MotionEvent;
 import android.view.VelocityTracker;
 import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.cjj.MaterialRefreshLayout;
 import com.cjj.MaterialRefreshListener;
@@ -34,13 +37,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.add) {
-            Intent i = new Intent(MainActivity.this,AddLocation.class);
-            startActivity(i);
-            return true;
-        }
         return super.onOptionsItemSelected(item);
     }
 
@@ -62,16 +58,37 @@ public class MainActivity extends AppCompatActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawerLayout);
         mNavigationView = (NavigationView) findViewById(R.id.shitstuff) ;
-
         mFragmentManager = getSupportFragmentManager();
         mFragmentTransaction = mFragmentManager.beginTransaction();
         mFragmentTransaction.replace(R.id.containerView,new TabFragment()).commit();
         /**
          *  set refresh
          */
-        /**
-         * Setup Drawer Toggle of the Toolbar
-         */
+        mNavigationView.setNavigationItemSelectedListener(new NavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(MenuItem menuItem) {
+                mDrawerLayout.closeDrawers();
+
+
+
+                if (menuItem.getItemId() == R.id.add_btn) {
+                    Intent intent = new Intent(MainActivity.this,AddLocation.class);
+                    startActivity(intent);
+
+                }
+                if(menuItem.getItemId() == R.id.btn_feedback){
+                    Intent intent = new Intent(MainActivity.this,FeedBack.class);
+                    startActivity(intent);
+                }
+                if(menuItem.getItemId() == R.id.setting){
+                    Intent intent = new Intent(MainActivity.this,Setting.class);
+                    startActivity(intent);
+                }
+
+                return false;
+            }
+
+        });
 
         android.support.v7.widget.Toolbar toolbar = (android.support.v7.widget.Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
@@ -82,4 +99,5 @@ public class MainActivity extends AppCompatActivity {
         mDrawerToggle.syncState();
 
     }
+
 }

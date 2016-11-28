@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -23,8 +24,8 @@ public class NowFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v= inflater.inflate(R.layout.now_layout,null);
         final SwipeRefreshLayout refreshLayout =(SwipeRefreshLayout) v.findViewById(R.id.activity_main_swipe_refresh_layout);
-        final GifTextView gifView= (GifTextView) getActivity().findViewById(R.id.gifTextView);
-
+        final DrawerLayout drawerLayout= (DrawerLayout) getActivity().findViewById(R.id.drawerLayout);
+        drawerLayout.setBackground(getResources().getDrawable(R.drawable.bg2));
 
         refreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -35,7 +36,7 @@ public class NowFragment extends Fragment {
                     @Override
                     public void run() {
                         //Do something after 500ms
-                        gifView.setBackgroundResource(BackgroundRes.getNext());
+                        drawerLayout.setBackgroundResource(BackgroundRes.getNext());
                         refreshLayout.setRefreshing(false);
                     }
                 }, 500);

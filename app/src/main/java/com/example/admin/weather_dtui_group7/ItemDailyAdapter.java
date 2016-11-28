@@ -64,7 +64,7 @@ public class ItemDailyAdapter extends BaseAdapter {
             holder.date_string = (TextView)view.findViewById(R.id.date_string);
             holder.status = (TextView)view.findViewById(R.id.status);
             holder.degree = (TextView)view.findViewById(R.id.degree);
-            holder.iconNext= (ImageView)view.findViewById(R.id.iconNext);
+//            holder.iconNext= (ImageView)view.findViewById(R.id.iconNext);
             view.setTag(holder);
         }
         else {
@@ -77,7 +77,7 @@ public class ItemDailyAdapter extends BaseAdapter {
             holder.date_string.setText(itemDaily.getDate_string());
             holder.status.setText(itemDaily.getStatus());
             holder.degree.setText(itemDaily.getDegree());
-            holder.iconNext.setImageResource(itemDaily.getIconNext());
+//            holder.iconNext.setImageResource(itemDaily.getIconNext());
         }
         return view;
     }

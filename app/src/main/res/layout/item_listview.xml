@@ -3,7 +3,7 @@
     android:orientation="horizontal"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="#10000000"
+    android:background="@color/fragBack"
 
     >
     <LinearLayout
@@ -14,6 +14,7 @@
         android:paddingLeft="10dp"
         android:paddingTop="10dp"
         android:paddingBottom="10dp"
+        android:layout_weight="1"
         >
         <TextView
             android:layout_width="wrap_content"
@@ -40,17 +41,19 @@
         android:paddingTop="10dp"
         android:scaleType="fitXY"
         android:id="@+id/iconWeather"
+        android:layout_weight="1"
         />
     <TextView
         android:layout_width="137dp"
         android:layout_height="wrap_content"
         android:paddingTop="26dp"
-        android:paddingLeft="5dp"
+        android:paddingLeft="15dp"
         android:paddingRight="0dp"
         android:text="Trời nắng và hanh kho "
         android:textSize="12dp"
         android:textColor="@color/white"
         android:id="@+id/status"
+        android:layout_weight="1"
         />
     <TextView
         android:layout_width="wrap_content"
@@ -58,16 +61,17 @@
         android:text="27/24"
         android:textColor="@color/white"
         android:textSize="15dp"
+        android:layout_weight="1"
         android:paddingLeft="5dp"
         android:textStyle="bold"
         android:paddingRight="10dp"
         android:id="@+id/degree"
         />
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:src="@drawable/rightarrow"
-        android:paddingTop="23dp"
-        android:id="@+id/iconNext"
-        />
+    <!--<ImageView-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:src="@drawable/rightarrow"-->
+        <!--android:paddingTop="23dp"-->
+        <!--android:id="@+id/iconNext"-->
+        <!--/>-->
 </LinearLayout>

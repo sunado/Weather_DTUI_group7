@@ -2,17 +2,21 @@ package com.example.admin.weather_dtui_group7;
 
 import android.graphics.Color;
 import android.support.annotation.NonNull;
+import android.support.design.widget.NavigationView;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
+import android.view.Menu;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.AutoCompleteTextView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import pl.droidsonroids.gif.GifTextView;
 
@@ -37,11 +41,9 @@ public class AddLocation extends AppCompatActivity {
                 TextView textView=(TextView) view.findViewById(android.R.id.text1);
                 textView.setTextColor(Color.WHITE);
                 textView.setTextSize(12);
-                textView.setBackgroundColor(Color.parseColor("#696161"));
                 return view;
             }
         };
-        listView.setCacheColorHint(Color.parseColor("#696161"));
         listView.setAdapter(adapter);
 
         AutoCompleteTextView text =(AutoCompleteTextView)findViewById(R.id.auto);
@@ -53,14 +55,25 @@ public class AddLocation extends AppCompatActivity {
                         View view =super.getView(position, convertView, parent);
 
                         TextView textView=(TextView) view.findViewById(android.R.id.text1);
-                        textView.setTextColor(Color.WHITE);
                         textView.setTextSize(12);
-                        textView.setBackgroundColor(Color.parseColor("#696161"));
                         return view;
                     }
                 };
 
         text.setAdapter(adapter_auto);
         text.setThreshold(1);
+        text.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position){
+                    case 0:
+                        AddLocation.this.finish();
+                        break;
+                    case 1:
+                        AddLocation.this.finish();
+                        break;
+                }
+            }
+        });
     }
 }

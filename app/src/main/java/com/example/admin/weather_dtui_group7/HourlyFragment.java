@@ -6,6 +6,7 @@ import android.graphics.Paint;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.support.v4.widget.DrawerLayout;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
@@ -24,6 +25,7 @@ import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
 import com.github.mikephil.charting.utils.ViewPortHandler;
 
 import java.util.ArrayList;
+
 
 /**
  * Created by phong on 11/16/16.
@@ -108,6 +110,7 @@ public class HourlyFragment extends Fragment {
         lineChart.getXAxis().setDrawGridLines(false);
         lineChart.getXAxis().setPosition(XAxis.XAxisPosition.BOTTOM);
         lineChart.getXAxis().setTextColor(Color.WHITE);
+        lineChart.getXAxis().setAxisLineColor(Color.WHITE);
         lineChart.getAxisLeft().setEnabled(false);
         lineChart.setData(data);
         lineChart.getLineData().setValueTextColor(Color.WHITE);
@@ -118,11 +121,11 @@ public class HourlyFragment extends Fragment {
                 return String.valueOf((int) Math.floor(value))+"°";
             }
         });
+        lineChart.setTouchEnabled(false);
     }
     public void setListView(View view){
         listView = (ListView)view.findViewById(R.id.listview_hour);
         ItemHourlyAdapter adapter =new ItemHourlyAdapter(view.getContext(),listitem);
-
         listView.setAdapter(adapter);
 
     }

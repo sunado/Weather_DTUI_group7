@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_feed_back"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/bg21"
+    tools:context="com.example.admin.weather_dtui_group7.FeedBack">
+    <android.support.v7.widget.Toolbar
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/toolbar_feedback"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Phản hồi" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/toolbar_feedback"
+        android:layout_marginLeft="30dp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="30dp"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Loại vấn đề"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:padding="10dp"
+            android:id="@+id/problem"
+            android:background="@drawable/auto_text"
+            android:hint="Chọn vấn đề"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:textColorHint="@color/white"
+            />
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Vị trí của bạn"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:id="@+id/location"
+            android:layout_height="40dp"
+            android:textCursorDrawable="@drawable/color_cursor"
+            android:padding="10dp"
+            android:background="@drawable/auto_text"
+            android:hint="Vị trí của bạn"
+            android:textColorHint="@color/white"
+            />
+        <TextView
+            android:layout_marginTop="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Chi tiết phản hồi"
+            android:textColor="@color/white"
+            />
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="170dp"
+            android:background="@drawable/auto_text"
+            android:textCursorDrawable="@drawable/color_cursor"
+            />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Gửi cho chúng tôi"
+            android:textColor="#1e1717"
+            />
+        </LinearLayout>
+</RelativeLayout>

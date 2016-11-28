@@ -35,6 +35,8 @@ dependencies {
 }
 repositories {
     maven { url "https://jitpack.io" }
+
+
 }
 android {
     defaultConfig {

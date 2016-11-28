@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:scrollbars="none"
         android:id="@+id/listview"
-
+        android:divider="@null"
         android:background="@color/fragBack"
         android:scrollbarAlwaysDrawVerticalTrack="true"
         >

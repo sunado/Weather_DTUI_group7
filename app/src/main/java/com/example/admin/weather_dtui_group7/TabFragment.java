@@ -7,9 +7,11 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
 
 /**
  * Created by phong on 11/16/16.
@@ -29,7 +31,6 @@ public class TabFragment extends Fragment {
         View x =  inflater.inflate(R.layout.tab_layout,null);
         tabLayout = (TabLayout) x.findViewById(R.id.tabs);
         viewPager = (ViewPager) x.findViewById(R.id.viewpager);
-
         /**
          *Set an Apater for the View Pager
          */
@@ -53,7 +54,6 @@ public class TabFragment extends Fragment {
     }
 
     class MyAdapter extends FragmentPagerAdapter {
-
         public MyAdapter(FragmentManager fm) {
             super(fm);
         }

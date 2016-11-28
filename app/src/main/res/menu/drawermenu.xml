@@ -1,20 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:checkableBehavior="single"
+    >
 
     <item android:title="Địa Điểm Hiện Tại"
-        android:icon="@drawable/placeholder"
+        android:icon="@drawable/location"
         />
 
     <item android:title="Hà Nội"
         android:id="@+id/nav_item_inbox"
 
         />
+    <item
+        android:icon="@drawable/add"
+        android:id="@+id/add_btn"
+        android:title="Thêm địa điểm"
+        />
+        <item android:title="Tùy Chọn">
+            <menu>
             <item
                 android:title="Cài đặt"
+                android:id="@+id/setting"
                 android:icon="@drawable/settings"
                 />
             <item
                 android:title="Gửi phản hồi"
+                android:id="@+id/btn_feedback"
                 android:icon="@drawable/sentmail"
                 />
 
@@ -27,9 +38,10 @@
             android:icon="@drawable/star"
             />
         <item android:title="Trợ giúp"
-            android:icon="@drawable/info"
+            android:icon="@drawable/help"
             />
     </group>
-
+            </menu>
+    </item>
 
 </menu>

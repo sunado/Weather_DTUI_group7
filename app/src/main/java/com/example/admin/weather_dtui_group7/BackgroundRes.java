@@ -5,7 +5,7 @@ package com.example.admin.weather_dtui_group7;
  */
 
 public class BackgroundRes {
-    private static int imgList[]={R.drawable.back1,R.drawable.back2,R.drawable.back3,R.drawable.back4,R.drawable.back5};
+    private static int imgList[]={R.drawable.bg1,R.drawable.bg2,R.drawable.bg3,R.drawable.bg4};
     private static int count=1;
     public static int getNext(){
         count=(count+1)%imgList.length;

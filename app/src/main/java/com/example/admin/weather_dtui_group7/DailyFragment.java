@@ -10,6 +10,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
+import android.widget.ListAdapter;
 import android.widget.ListView;
 
 import com.github.mikephil.charting.charts.BarChart;
@@ -104,7 +105,8 @@ public class DailyFragment extends Fragment {
                 return String.valueOf((int) Math.floor(value))+"°";
             }
         });
-
+        barChart.setTouchEnabled(false);
+        barChart.getXAxis().setAxisLineColor(Color.WHITE);
     }
     public void setlistview(View view){
         listView = (ListView) view.findViewById(R.id.listview);
@@ -117,7 +119,7 @@ public class DailyFragment extends Fragment {
 
 
         ItemDailyAdapter adapter =new ItemDailyAdapter(view.getContext(),listitem);
-
+        setListViewHeightBasedOnChildren(listView);
         listView.setAdapter(adapter);
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
@@ -130,5 +132,25 @@ public class DailyFragment extends Fragment {
                 }
             }
         });
+    }
+    public static void setListViewHeightBasedOnChildren(ListView listView) {
+        ListAdapter listAdapter = listView.getAdapter();
+        if (listAdapter == null)
+            return;
+
+        int desiredWidth = View.MeasureSpec.makeMeasureSpec(listView.getWidth(), View.MeasureSpec.UNSPECIFIED);
+        int totalHeight = 0;
+        View view = null;
+        for (int i = 0; i < listAdapter.getCount(); i++) {
+            view = listAdapter.getView(i, view, listView);
+            if (i == 0)
+                view.setLayoutParams(new ViewGroup.LayoutParams(desiredWidth, ViewGroup.LayoutParams.WRAP_CONTENT));
+
+            view.measure(desiredWidth, View.MeasureSpec.UNSPECIFIED);
+            totalHeight += view.getMeasuredHeight();
+        }
+        ViewGroup.LayoutParams params = listView.getLayoutParams();
+        params.height = totalHeight + (listView.getDividerHeight() * (listAdapter.getCount() - 1));
+        listView.setLayoutParams(params);
     }
 }
