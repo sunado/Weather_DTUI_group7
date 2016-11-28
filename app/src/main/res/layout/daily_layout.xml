@@ -6,7 +6,7 @@
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        android:background="#10000000"
+        android:background="@color/fragBack"
         />
     <ListView
         android:layout_width="match_parent"
@@ -14,7 +14,8 @@
         android:scrollbars="none"
         android:id="@+id/listview"
 
-        android:background="#10000000"
+        android:background="@color/fragBack"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
         >
 
     </ListView>

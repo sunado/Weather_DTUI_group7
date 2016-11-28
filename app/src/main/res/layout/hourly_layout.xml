@@ -12,11 +12,11 @@
             android:id="@+id/linechart"
             android:layout_width="match_parent"
             android:layout_height="200dp"
-            android:background="#10000000"
+            android:background="@color/fragBack"
             />
 
         <ListView
-            android:background="#10000000"
+            android:background="@color/fragBack"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -26,6 +26,7 @@
             android:dividerHeight="0dp"
             android:clipToPadding="false"
             android:nestedScrollingEnabled="false"
+            android:scrollbarAlwaysDrawVerticalTrack="true"
             />
 
     </LinearLayout>

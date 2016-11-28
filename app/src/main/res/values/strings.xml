@@ -7,4 +7,6 @@
     <string name="edittext_hint">
         <font size="12">Nhập thành phố</font>
     </string>
+    <string name="google_maps_key">AIzaSyApnxGIYaBnqpoVQRj0hYL3mRyU0uS0Cf4</string>
+
 </resources>
